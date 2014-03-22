@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+    <title>Gangnam Style</title>
+  </head>
+
+  <body>
+    <div id="main-container">
+      <div class="psydroid-container">
+        <div class="psydroid">
+          <img class="psydroid-head" src="images/psydroid-head.png">
+          <img class="psydroid-body" src="images/psydroid-body.png">
+          <img class="psydroid-arm-l" src="images/psydroid-arm-l.png">
+          <img class="psydroid-arm-r" src="images/psydroid-arm-r.png">
+          <img class="psydroid-leg-l" src="images/psydroid-leg-l.png">
+          <img class="psydroid-leg-r" src="images/psydroid-leg-r.png">
+        </div>
+      </div>
+    </div>
+
+    <audio id="gangnam-sound" preload="auto" loop="true">
+      <source src="audio/gangnamstyle2.ogg"/>
+    </audio>
+
+    <script>
+      var gangnamSound = $("#gangnam-sound")[0];
+        $(".psydroid").hover(function() {
+          setTimeout( function() {
+            gangnamSound.play();
+          }, 0 );
+        }, function(){
+          gangnamSound.pause();
+          gangnamSound.currentTime = 0;
+        });
+    </script>
+
+  </body>
+</html>
